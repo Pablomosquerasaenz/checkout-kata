@@ -1,0 +1,24 @@
+C:\Users\PabloMosquera\.jdks\openjdk-17.0.2\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\lib\idea_rt.jar=55956:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\PabloMosquera\IdeaProjects\kataNextail\out\production\kataNextail test.test
+Item: TSHIRT of Quantity: 1
+Item: VOUCHER of Quantity: 1
+Item: PANTS of Quantity: 1
+Total price:32.5
+Passed
+Item: TSHIRT of Quantity: 1
+Item: VOUCHER of Quantity: 2
+Total price:25.0
+Passed
+Item: TSHIRT of Quantity: 4
+Item: VOUCHER of Quantity: 1
+Total price:81.0
+Passed
+Item: TSHIRT of Quantity: 3
+Item: VOUCHER of Quantity: 3
+Item: PANTS of Quantity: 1
+Total price:74.5
+Passed
+java.lang.Exception: No such item in your cart
+	at solution.checkoutKata.removeItem(checkoutKata.java:31)
+	at test.test.main(test.java:51)
+
+Process finished with exit code 0
