@@ -18,17 +18,15 @@ public class checkoutKata{
             itemsListMap.put(item, 1);
         else
         {
-            // if the cart already contains the item then just update
-            // the amount by adding the new quantity to old one
             itemsListMap.put(item, 1 + itemsListMap.get(item));
         }
     }
 
-    // Method to remove items along with their quantities from the existing cart
+    // Method to remove items along with their quantities
     public static void removeItem(String item, Integer quantity) throws Exception{
         // If the item is not in the cart then throw exception
         if(!itemsListMap.containsKey(item))
-            throw new Exception("No such item in your cart");
+            throw new NoSuchItemInCartException();
 
         // If the item's quantity to be removed is equal to the existing quantity
         // of the item then remove the item from the cart or else update the quantity
@@ -39,13 +37,13 @@ public class checkoutKata{
         else if(itemsListMap.get(item) > quantity)
             itemsListMap.put(item, itemsListMap.get(item) - quantity);
         else
-            throw new Exception("Quantity for the provided item is more than the quantity in the cart");
+            throw new NotEnoughItemsToRemoveException();
     }
 
     public static void displayCart() throws Exception
     {
         if(itemsListMap.isEmpty())
-            throw new Exception("Empty list");
+            throw new EmptyCartException();
 
         Set<String> allItemsInCart = itemsListMap.keySet();
         for(Iterator<String> i = allItemsInCart.iterator(); i.hasNext();){
@@ -107,3 +105,7 @@ public class checkoutKata{
         return total;
     }
 }
+
+class NotEnoughItemsToRemoveException extends RuntimeException {}
+class NoSuchItemInCartException extends RuntimeException {}
+class EmptyCartException extends RuntimeException {}
